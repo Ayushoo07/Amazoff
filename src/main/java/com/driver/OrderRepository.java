@@ -129,7 +129,24 @@ public class OrderRepository
         int hh=maxTime/60;
         int mm=maxTime%60;
 
-        String time=hh+":"+mm;
+        String time="";
+        if(hh/10==0)
+        {
+            time="0"+String.valueOf(hh)+":";
+        }
+        else
+        {
+            time=String.valueOf(hh)+":";
+        }
+
+        if(mm/10==0)
+        {
+            time+="0"+String.valueOf(mm);
+        }
+        else
+        {
+            time+=String.valueOf(mm);
+        }
 
         return time;
     }
